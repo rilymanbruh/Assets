@@ -13,17 +13,29 @@ public class enemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        InitComponentLinks();
+        PickNewPatrolPoint();
+    }
+    private void InitComponentLinks()
+    {
         _navMeshAgent = GetComponent<NavMeshAgent>();
-
-        _navMeshAgent.destination = patrolPoints[Random.Range(0, patrolPoints.Count)].position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        PatrolUpdate();
+    }
+    private void PatrolUpdate()
+    {
         if (_navMeshAgent.remainingDistance == 0)
         {
-            _navMeshAgent.destination = patrolPoints[Random.Range(0, patrolPoints.Count)].position;
+            PickNewPatrolPoint();
         }
+    }
+
+    private void PickNewPatrolPoint()
+    {
+        _navMeshAgent.destination = patrolPoints[Random.Range(0, patrolPoints.Count)].position;
     }
 }
