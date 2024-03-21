@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PLayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float gravity = 9.8f;
     public float jumpForce;
