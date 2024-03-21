@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7748002978816094994}
   - component: {fileID: 6240598784266210702}
   - component: {fileID: 7048078668714981884}
-  - component: {fileID: 8875037906120709474}
+  - component: {fileID: 4209984800094441949}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8875037906120709474
+--- !u!114 &4209984800094441949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,8 +143,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8189311325984538491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf6e1a70dd0f00438b76097ad3bf540, type: 3}
+  m_Script: {fileID: 11500000, guid: ab3846a65af2e53419cf92b0d5e986c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
   lifetime: 5
+  damage: 10
