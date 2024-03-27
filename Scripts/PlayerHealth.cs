@@ -23,6 +23,13 @@ public class PlayerHealth : MonoBehaviour
         DrawHealthBar();
     }
 
+    public void AddHealth(float amount)
+    {
+        value += amount;
+        value = Mathf.Clamp(value, 0, _maxValue);
+        DrawHealthBar();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
