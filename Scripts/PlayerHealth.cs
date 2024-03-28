@@ -10,6 +10,9 @@ public class PlayerHealth : MonoBehaviour
     public GameObject gameplayUI;
     public GameObject gameOverScreen;
 
+    public AudioClip deadSound;
+    private AudioSource _deadAudioSource;
+
     private float _maxValue;
 
     public void DealDamage(float damage)
@@ -35,6 +38,8 @@ public class PlayerHealth : MonoBehaviour
     {
         _maxValue = value;
 
+        _deadAudioSource = GetComponentInChildren<AudioSource>();
+
         DrawHealthBar();
     }
 
@@ -51,6 +56,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void PlayerIsDead()
     {
+        _deadAudioSource.PlayOneShot(deadSound);
+
         gameplayUI.SetActive(false);
         gameOverScreen.SetActive(true);
         GetComponent<PlayerController>().enabled = false;

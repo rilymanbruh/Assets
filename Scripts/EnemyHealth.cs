@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public GameObject ENDGAMEGOOD;
+
     public float value = 100;
 
     public void DealDamage(float damage)
@@ -11,7 +13,8 @@ public class EnemyHealth : MonoBehaviour
         value -= damage;
         if (value <= 0)
         {
-            Destroy(gameObject);
+            ENDGAMEGOOD.SetActive(true);
+            GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         }
     }
 
