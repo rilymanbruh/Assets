@@ -56,7 +56,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void PlayerIsDead()
     {
-        _deadAudioSource.PlayOneShot(deadSound);
 
         gameplayUI.SetActive(false);
         gameOverScreen.SetActive(true);
